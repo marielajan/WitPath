@@ -1,0 +1,6 @@
+id,legajo,nombre,apellido,fecha_nacimiento,grado,division,turno,state,curso_id
+1,111,Andrea,Pietro,1990-12-10,5,A,Tarde,activo,1
+2,122,Leonardo,Juarez,1995-06-10,7,B,Tarde,inactivo,1
+3,133,Vicente,Fernandez,1992-05-01,6,A,Mañana,activo,2
+4,144,Tadeo,Arias,1990-08-21,5,A,Mañana,activo,2
+5,155,Juana,Dante,1991-02-07,6,B,Tarde,inactivo,2

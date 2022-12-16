@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para contenido -->
+    <record id="contenido_form_view" model="ir.ui.view">
+        <field name="name">contenido.form.view</field>
+        <field name="model">wp.contenido</field>
+        <field name="arch" type="xml">
+            <form string="Contenido">
+                <sheet>
+                    <header>
+                        <button name="btn_activar" string="Activar" type="object"
+                                states="inactivo" class="oe_highlight"/>
+                        <button name="btn_desactivar" string="Desactivar" type="object"
+                                states="activo"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group>
+                        <field name="orden"/>
+                        <field name="titulo"/>
+                        <field name="formato"/>
+                        <field name="contenido"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para contenido -->
+    <record id="contenido_tree_view" model="ir.ui.view">
+        <field name="name">contenido.tree.view</field>
+        <field name="model">wp.contenido</field>
+        <field name="arch" type="xml">
+            <tree string="Contenido">
+                <field name="orden"/>
+                <field name="titulo"/>
+                <field name="formato"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

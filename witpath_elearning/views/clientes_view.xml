@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para clientes -->
+    <record id="clientes_form_view" model="ir.ui.view">
+        <field name="name">clientes.form.view</field>
+        <field name="model">wp.clientes</field>
+        <field name="arch" type="xml">
+            <form string="Clientes">
+                <sheet>
+                    <header>
+                        <button name="btn_activar" string="Activar" type="object"
+                                states="inactivo" class="oe_highlight"/>
+                        <button name="btn_desactivar" string="Desactivar" type="object"
+                                states="activo"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group>
+                        <field name="name"/>
+                        <field name="razon_social"/>
+                        <field name="cuit"/>
+                        <field name="email"/>
+                        <field name="direccion"/>
+                        <field name="ciudad"/>
+                        <field name="provincia"/>
+                        <field name="pais"/>
+                        <field name="telefono"/>
+                        <field name="contacto_line_ids"/>
+                        <field name="alumno_line_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para clientes -->
+    <record id="clientes_tree_view" model="ir.ui.view">
+        <field name="name">clientes.tree.view</field>
+        <field name="model">wp.clientes</field>
+        <field name="arch" type="xml">
+            <tree string="Clientes">
+                <field name="name"/>
+                <field name="razon_social"/>
+                <field name="cuit"/>
+                <field name="email"/>
+                <field name="direccion"/>
+                <field name="ciudad"/>
+                <field name="provincia"/>
+                <field name="pais"/>
+                <field name="telefono"/>
+                <field name="state" widget="badge" decoration-info="state == 'inactivo'"
+                       decoration-success="state == 'activo'"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

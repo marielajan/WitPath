@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="alumnos_action" model="ir.actions.act_window">
+        <field name="name">Alumnos</field>
+        <field name="res_model">wp.alumnos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="clases_action" model="ir.actions.act_window">
+        <field name="name">Clases</field>
+        <field name="res_model">wp.clases</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="clientes_action" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="res_model">wp.clientes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="contactos_action" model="ir.actions.act_window">
+        <field name="name">Contactos</field>
+        <field name="res_model">wp.contactos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="contenido_action" model="ir.actions.act_window">
+        <field name="name">Contenido</field>
+        <field name="res_model">wp.contenido</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="contratos_action" model="ir.actions.act_window">
+        <field name="name">Contratos</field>
+        <field name="res_model">wp.contratos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="cotizaciones_action" model="ir.actions.act_window">
+        <field name="name">Cotizaciones</field>
+        <field name="res_model">wp.cotizaciones</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="gestion_cursos_action" model="ir.actions.act_window">
+        <field name="name">Gestion Cursos</field>
+        <field name="res_model">wp.cursos</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="cursos_action" model="ir.actions.act_window">
+        <field name="name">Cursos</field>
+        <field name="res_model">wp.cursos</field>
+        <field name="view_mode">kanban</field>
+    </record>
+
+    <record id="foros_action" model="ir.actions.act_window">
+        <field name="name">Foros</field>
+        <field name="res_model">wp.foros</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="WitPath" id="witpath_menu"/>
+    <menuitem name="Gestion Cursos" id="gestion_menu" parent="witpath_menu" action="gestion_cursos_action"/>
+    <menuitem name="Cursos" id="cursos_menu" parent="witpath_menu" action="cursos_action"/>
+    <menuitem name="Clientes" id="clientes_menu" parent="witpath_menu" action="clientes_action"/>
+    <menuitem name="Cotizaciones" id="cotizaciones_menu" parent="witpath_menu" action="cotizaciones_action"/>
+</odoo>

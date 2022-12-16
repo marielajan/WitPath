@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para clases -->
+    <record id="clases_form_view" model="ir.ui.view">
+        <field name="name">clases.form.view</field>
+        <field name="model">wp.clases</field>
+        <field name="arch" type="xml">
+            <form string="Clases">
+                <sheet>
+                    <header>
+                        <button name="btn_activar" string="Activar" type="object"
+                                states="inactivo" class="oe_highlight"/>
+                        <button name="btn_desactivar" string="Desactivar" type="object"
+                                states="activo"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group>
+                        <field name="name"/>
+                        <field name="orden"/>
+                        <field name="duracion" widget="float_time"/>
+                        <field name="contenido_line_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para clases -->
+    <record id="clases_tree_view" model="ir.ui.view">
+        <field name="name">clases.tree.view</field>
+        <field name="model">wp.clases</field>
+        <field name="arch" type="xml">
+            <tree string="Clases">
+                <field name="name"/>
+                <field name="orden"/>
+                <field name="duracion" widget="float_time"/>
+                <field name="state" widget="badge" decoration-danger="state == 'inactivo'"
+                       decoration-success="state == 'activo'"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="reporte_contrato">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="oe_structure" />
+                <div class="page">
+                    <div class="text-center"><h2>Ventas</h2></div>
+                    <p class="text-center"><B>Fecha Inicio:</B> <span t-esc="form_data['date_start']" t-options='{"widget": "date"}'/></p>
+                    <p class="text-center"><B>Fecha Final:</B> <span t-esc="form_data['date_end']" t-options='{"widget": "date"}'/></p>
+                    <table class="table o_main_table table-centered" name="contratos">
+                        <thead>
+                            <tr>
+                                <th>Número</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th class="text-right">Total</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="reporte_contrato" model="ir.actions.report">
+        <field name="name">Contrato</field>
+        <field name="model">wp.contratos</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">witpath_elearning.contrato</field>
+        <field name="report_file">witpath_elearning.contrato</field>
+        <field name="binding_model_id" ref="model_witpath_elearning_contrato"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

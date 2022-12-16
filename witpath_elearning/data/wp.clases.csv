@@ -1,0 +1,6 @@
+id,name,orden,duracion,state,curso_id
+2,Sensores,2,2,inactivo,1
+1,Introducción,1,2,activo,1
+5,Clase 1,5,2,inactivo,2
+6,Clase 2,6,2,inactivo,2
+9,Clase 1,10,2,inactivo,3

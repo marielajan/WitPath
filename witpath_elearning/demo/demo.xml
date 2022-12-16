@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!-- Clientes -->
+        <record id="cliente01" model="wp.clientes">
+            <field name="name">Nuestra Señora del Lujan</field>
+            <field name="razon_social">Colegio Nro. 3541</field>
+            <field name="cuit">20-11223344-8</field>
+            <field name="email">nuestrasenioralujan@colegio.edu.ar</field>
+            <field name="direccion">Sarmiento 533</field>
+            <field name="ciudad">Rosario</field>
+            <field name="provincia">Santa Fe</field>
+            <field name="pais">Argentina</field>
+            <field name="telefono">0341-4894523</field>
+            <!-- <field name="contacto_line_ids"></field> -->
+            <!-- <field name="alumno_line_ids"></field> -->
+        </record>
+        <record id="cliente02" model="wp.clientes">
+            <field name="name">Los Arrayanes</field>
+            <field name="razon_social">Colegio Nro. 4852</field>
+            <field name="cuit">20-11443983-8</field>
+            <field name="email">losarrayanes@colegio.edu.ar</field>
+            <field name="direccion">Riobamba 953</field>
+            <field name="ciudad">Rosario</field>
+            <field name="provincia">Santa Fe</field>
+            <field name="pais">Argentina</field>
+            <field name="telefono">0341-4457864</field>
+            <!-- <field name="contacto_line_ids"></field> -->
+            <!-- <field name="alumno_line_ids"></field> -->
+        </record>
+    </data>
+</odoo>

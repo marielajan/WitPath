@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para cursos -->
+    <record id="cursos_form_view" model="ir.ui.view">
+        <field name="name">curso.form.view</field>
+        <field name="model">wp.cursos</field>
+        <field name="arch" type="xml">
+            <form string="Curso">
+                <sheet>
+                    <header>
+                        <button name="btn_activar" string="Activar" type="object" states="inactivo" class="oe_highlight"/>
+                        <button name="btn_desactivar" string="Desactivar" type="object" states="activo"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group>
+                        <group>
+                            <field name="name" style="font-size:24px"/>
+                            <field name="subtitulo"/>
+                            <field name="tema"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image" class="on_left oe_avatar"
+                                   nolabel="1" options="{'size': [250, 250]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="public" string="Informacion">
+                            <sheet>
+                                <group>
+                                    <field name="descripcion"/>
+                                    <field name="fecha_inicio"/>
+                                    <field name="fecha_fin"/>
+                                    <field name="dias_cursado"/>
+                                    <field name="horario_inicio" widget="float_time"/>
+                                    <field name="horario_finalizacion" widget="float_time"/>
+                                    <field name="precio"/>
+                                </group>
+                            </sheet>
+
+                        </page>
+                        <page name="public" string="Clases">
+                           <group>
+                                <field name="clase_line_ids" nolabel="1"/>
+                           </group>
+                        </page>
+                        <page name="public" string="Alumnos">
+                           <group>
+                                <field name="alumno_line_ids" nolabel="1"/>
+                           </group>
+                        </page>
+                        <page name="public" string="Foros">
+                           <group>
+                                <field name="foro_line_ids" nolabel="1"/>
+                           </group>
+                        </page>
+                    </notebook>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para cursos -->
+    <record id="cursos_tree_view" model="ir.ui.view">
+        <field name="name">cursos.tree.view</field>
+        <field name="model">wp.cursos</field>
+        <field name="arch" type="xml">
+            <tree string="Cursos">
+                <field name="name"/>
+                <field name="subtitulo"/>
+                <field name="tema"/>
+                <field name="descripcion"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+                <field name="dias_cursado" optional="hide"/>
+                <field name="horario_inicio" optional="hide"/>
+                <field name="horario_finalizacion" optional="hide"/>
+                <field name="precio"/>
+                <field name="state" widget="badge" decoration-danger="state == 'inactivo'"
+                       decoration-success="state == 'activo'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista kanban para cursos -->
+    <record id="cursos_kanban_view" model="ir.ui.view">
+        <field name="name">curso.kanban.view</field>
+        <field name="model">wp.cursos</field>
+        <field name="arch" type="xml">
+            <kanban string="Cursos">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="subtitulo"/>
+                <field name="tema"/>
+                <field name="descripcion"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+                <field name="dias_cursado"/>
+                <field name="horario_inicio"/>
+                <field name="horario_finalizacion"/>
+                <field name="precio"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image" style="width:180px; height:180px; align: left;">
+                                <img t-att-src="kanban_image('wp.cursos', 'image', record.id.raw_value)"
+                                     alt="Image" style="width:150px; height:150px;"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title oe_partner_heading">
+                                            <h3><b><field name="name"/></b></h3>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_body">
+                                     <ul>
+                                         <li><i><field name="subtitulo" /></i></li>
+                                         <li><b>Tema: <field name="tema"/></b></li>
+                                         <li><b>Fecha inicio: <field name="fecha_inicio"/></b></li>
+                                         <li><b>Fecha finalizacion: <field name="fecha_fin"/></b></li>
+                                         <li><b>Precio ARS: <field name="precio"/></b></li>
+                                         <li><field name="state"  widget="label_selection"
+                                                    options="{'classes':
+                                                        {'inactivo': 'danger',
+                                                         'activo': 'success'}}"/>
+                                         </li>
+                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Vista busqueda para cursos -->
+    <!--<record id="cursos_search_view" model="ir.ui.view">
+        <field name="name">curso.search.view</field>
+        <field name="model">wp.cursos</field>
+        <field name="arch" type="xml">
+            <search>
+                &lt;!&ndash; Busqueda rapida &ndash;&gt;
+                <field name="name" string="Nombre del curso"/>
+
+                &lt;!&ndash; Filtro rapido &ndash;&gt;
+                <filter name="categoria_novela" string="Novela" domain="[('categoria_id', '=', 'Novela')]"/>
+
+                &lt;!&ndash; Agrupacion rapida &ndash;&gt;
+                <group expand="0" string="Agrupar por" colspan="12" col="10">
+                    <filter name="categoria" string="Categoria" context="{'group_by':'categoria_id'}"/>
+                    <filter name="autor" string="Autor" context="{'group_by':'autor_id'}"/>
+                </group>
+                <searchpanel>
+                    <field name="categoria_id" string="Categoria" icon="fa-users"/>
+                    <field name="autor_id" string="Autores"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>-->
+</odoo>

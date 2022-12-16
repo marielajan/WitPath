@@ -1,0 +1,4 @@
+id,name,subtitulo,tema,descripcion,fecha_inicio,fecha_fin,dias_cursado,horario_inicio,horario_finalizacion,state,precio
+1,Robotica Inicial,Robotica para principiantes,Robotica,Curso de robotica para principiante,2020-01-06,2020-06-06,Lunes,13,14,activo,50
+2,Robotica Intermedio,Robotica para alumnos con concimientos,Robotica,Curso de robotica para alumnos con concimientos,2020-01-06,2020-06-06,Martes,13,14,activo,70
+3,Robotica Avanzado,Robotica para alumnos avanzados,Robotica,Curso de robotica para alumnos avanzados,2020-01-06,2020-06-06,Miercoles,13,14,activo,100

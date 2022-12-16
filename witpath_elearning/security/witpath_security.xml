@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="categoria_modulo_witpath" model="ir.module.category">
+        <field name="name">witpath_elearning</field>
+    </record>
+    <record id="witpath_group_user" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="category_id" ref="categoria_modulo_witpath"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

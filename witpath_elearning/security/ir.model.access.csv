@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_alumnos_user,Acceso a alumnos,model_wp_alumnos,witpath_group_user,1,1,1,1
+access_clases_user,Acceso a clases,model_wp_clases,witpath_group_user,1,1,1,1
+access_clientes_user,Acceso a clientes,model_wp_clientes,witpath_group_user,1,1,1,1
+access_contactos_user,Acceso a contactos,model_wp_contactos,witpath_group_user,1,1,1,1
+access_contenido_user,Acceso a contenido,model_wp_contenido,witpath_group_user,1,1,1,1
+access_contratos_user,Acceso a contratos,model_wp_contratos,witpath_group_user,1,1,1,1
+access_cotizaciones_user,Acceso a cotizaciones,model_wp_cotizaciones,witpath_group_user,1,1,1,1
+access_cursos_user,Acceso a cursos,model_wp_cursos,witpath_group_user,1,1,1,1
+access_foros_user,Acceso a foros,model_wp_foros,witpath_group_user,1,1,1,1
+access_cotizacion_detalle_user,Acceso a detalle cotizacion,model_wp_cotizaciones_detalle,witpath_group_user,1,1,1,1

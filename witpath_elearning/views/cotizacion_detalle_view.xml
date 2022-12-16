@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para cotizacion_detalle -->
+    <record id="cotizacion_detalle_form_view" model="ir.ui.view">
+        <field name="name">cotizacion.detalle.form.view</field>
+        <field name="model">wp.cotizaciones_detalle</field>
+        <field name="arch" type="xml">
+            <form string="Detalle">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="cantidad"/>
+                            <field name="curso_id"/>
+                            <field name="importe_unitario" readonly="1" force_save="1"/>
+                            <field name="subtotal" readonly="1" force_save="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para cotizacion_detalle -->
+    <record id="cotizacion_detalle_tree_view" model="ir.ui.view">
+        <field name="name">cotizacion.detalle.tree.view</field>
+        <field name="model">wp.cotizaciones_detalle</field>
+        <field name="arch" type="xml">
+            <tree string="Detalle">
+                <field name="cantidad"/>
+                <field name="curso_id"/>
+                <field name="importe_unitario" readonly="1" force_save="1"/>
+                <field name="subtotal" readonly="1" force_save="1"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para foros -->
+    <record id="foros_form_view" model="ir.ui.view">
+        <field name="name">foros.form.view</field>
+        <field name="model">wp.foros</field>
+        <field name="arch" type="xml">
+            <form string="Foros">
+                <sheet>
+                    <header>
+                        <button name="btn_activar" string="Activar" type="object"
+                                states="inactivo" class="oe_highlight"/>
+                        <button name="btn_desactivar" string="Desactivar" type="object"
+                                states="activo"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group>
+                        <group>
+                            <field name="orden"/>
+                            <field name="titulo"/>
+                            <field name="descripcion"/>
+                            <field name="clase_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para foros -->
+    <record id="foros_tree_view" model="ir.ui.view">
+        <field name="name">foros.tree.view</field>
+        <field name="model">wp.foros</field>
+        <field name="arch" type="xml">
+            <tree string="Foros">
+                <field name="orden"/>
+                <field name="titulo"/>
+                <field name="descripcion"/>
+                <field name="clase_id"/>
+                <field name="state" widget="badge" decoration-info="state == 'inactivo'"
+                       decoration-success="state == 'activo'"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

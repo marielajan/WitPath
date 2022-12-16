@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para alumnos -->
+    <record id="alumnos_form_view" model="ir.ui.view">
+        <field name="name">alumnos.form.view</field>
+        <field name="model">wp.alumnos</field>
+        <field name="arch" type="xml">
+            <form string="Alumnos">
+                <sheet>
+                    <header>
+                        <button name="btn_activar" string="Activar" type="object"
+                                states="inactivo" class="oe_highlight"/>
+                        <button name="btn_desactivar" string="Desactivar" type="object" states="activo"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group>
+                        <group>
+                            <field name="legajo"/>
+                            <field name="nombre"/>
+                            <field name="apellido"/>
+                            <field name="fecha_nacimiento"/>
+                            <field name="grado"/>
+                            <field name="division"/>
+                            <field name="turno"/>
+                            <field name="cliente_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para alumnos -->
+    <record id="alumnos_tree_view" model="ir.ui.view">
+        <field name="name">alumnos.tree.view</field>
+        <field name="model">wp.alumnos</field>
+        <field name="arch" type="xml">
+            <tree string="Alumnos">
+                <field name="legajo"/>
+                <field name="nombre"/>
+                <field name="apellido"/>
+                <field name="fecha_nacimiento"/>
+                <field name="grado"/>
+                <field name="division"/>
+                <field name="turno"/>
+                <field name="cliente_id"/>
+                <field name="state" widget="badge" decoration-info="state == 'inactivo'"
+                       decoration-success="state == 'activo'"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

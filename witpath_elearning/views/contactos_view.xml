@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Vista formulario para contactos -->
+    <record id="contactos_form_view" model="ir.ui.view">
+        <field name="name">contactos.form.view</field>
+        <field name="model">wp.contactos</field>
+        <field name="arch" type="xml">
+            <form string="Contactos">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="email"/>
+                            <field name="area"/>
+                            <field name="funcion"/>
+                            <field name="telefono"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista tree para contactos -->
+    <record id="contactos_tree_view" model="ir.ui.view">
+        <field name="name">contactos.tree.view</field>
+        <field name="model">wp.contactos</field>
+        <field name="arch" type="xml">
+            <tree string="Clientes">
+                <field name="nombre"/>
+                <field name="email"/>
+                <field name="area"/>
+                <field name="funcion"/>
+                <field name="telefono"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
